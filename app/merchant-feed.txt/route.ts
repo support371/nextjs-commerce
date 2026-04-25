@@ -1,0 +1,12 @@
+import { buildMerchantFeed } from "lib/gem-catalog";
+
+export const dynamic = "force-static";
+
+export function GET() {
+  return new Response(buildMerchantFeed(), {
+    headers: {
+      "content-type": "text/plain; charset=utf-8",
+      "cache-control": "public, max-age=3600",
+    },
+  });
+}
