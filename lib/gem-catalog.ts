@@ -8,6 +8,10 @@ export const company = {
   phoneRaw: "+14017022460",
   country: "US",
   address: "Business address to be finalized in production",
+  mission:
+    "GEM Cybersecurity Assist helps growing businesses operationalize defensive cybersecurity through practical software subscriptions, evidence workflows, executive reporting, and compliance-ready security operations.",
+  positioning:
+    "A product-led cybersecurity company focused on making security visibility, governance, and readiness understandable for business owners, operators, and technical teams.",
 } as const;
 
 export type GemProduct = {
@@ -23,6 +27,11 @@ export type GemProduct = {
   googleProductCategory: string;
   productType: string;
   mpn: string;
+  icon: string;
+  visualTitle: string;
+  visualDescription: string;
+  functions: string[];
+  benefits: string[];
   features: string[];
   outcomes: string[];
   bestFor: string;
@@ -43,6 +52,20 @@ export const products: GemProduct[] = [
     googleProductCategory: "5299",
     productType: "Cybersecurity Software > Endpoint Security",
     mpn: "GEM-ES-1YR",
+    icon: "device",
+    visualTitle: "Endpoint posture control center",
+    visualDescription:
+      "Show laptops, servers, users, and security tasks in one simple posture board so leadership can see what is protected, exposed, or overdue.",
+    functions: [
+      "Track device posture and baseline security tasks",
+      "Organize endpoint risk items by owner and status",
+      "Export a weekly executive posture summary",
+    ],
+    benefits: [
+      "Clear device visibility",
+      "Fewer unmanaged security gaps",
+      "Better accountability across technical owners",
+    ],
     features: [
       "Endpoint posture dashboard",
       "Device baseline checklist",
@@ -72,6 +95,20 @@ export const products: GemProduct[] = [
     googleProductCategory: "313",
     productType: "Cybersecurity Software > Security Awareness",
     mpn: "GEM-PD-1YR",
+    icon: "mail",
+    visualTitle: "Phishing readiness operating board",
+    visualDescription:
+      "Map training, campaign readiness, user risk, and response actions into an awareness program that is easy to track and explain.",
+    functions: [
+      "Plan phishing-readiness campaigns",
+      "Track training and user-risk visibility",
+      "Create recurring awareness reports",
+    ],
+    benefits: [
+      "Stronger employee readiness",
+      "Repeatable awareness cadence",
+      "Simpler management reporting",
+    ],
     features: [
       "Phishing campaign planner",
       "User risk tracker",
@@ -101,6 +138,20 @@ export const products: GemProduct[] = [
     googleProductCategory: "313",
     productType: "Cybersecurity Software > Compliance Management",
     mpn: "GEM-CV-1YR",
+    icon: "vault",
+    visualTitle: "Compliance evidence command vault",
+    visualDescription:
+      "Collect policies, control ownership, audit evidence, and readiness status in one evidence workspace for security reviews.",
+    functions: [
+      "Map controls to internal evidence",
+      "Track owners, due dates, and policy readiness",
+      "Prepare audit-ready evidence views",
+    ],
+    benefits: [
+      "Faster audit preparation",
+      "Cleaner evidence ownership",
+      "Reduced last-minute compliance scramble",
+    ],
     features: [
       "Policy and control library",
       "Evidence register",
@@ -130,6 +181,20 @@ export const products: GemProduct[] = [
     googleProductCategory: "5299",
     productType: "Cybersecurity Software > Threat Intelligence",
     mpn: "GEM-TI-1YR",
+    icon: "radar",
+    visualTitle: "Threat signal and priority dashboard",
+    visualDescription:
+      "Translate noisy cyber risk signals into a practical watchlist, security priorities, and executive digest structure.",
+    functions: [
+      "Track relevant cyber risk signals",
+      "Prioritize watchlist items",
+      "Structure leadership threat briefings",
+    ],
+    benefits: [
+      "Less noise, more priority",
+      "Better leadership visibility",
+      "Faster risk triage conversations",
+    ],
     features: [
       "Threat watchlist workspace",
       "Risk signal dashboard",
@@ -159,6 +224,20 @@ export const products: GemProduct[] = [
     googleProductCategory: "5299",
     productType: "Cybersecurity Software > Security Suite",
     mpn: "GEM-SSS-1YR",
+    icon: "suite",
+    visualTitle: "Security operating system for growing teams",
+    visualDescription:
+      "Bundle endpoint posture, phishing readiness, compliance evidence, and executive reporting into a single security operating layer.",
+    functions: [
+      "Unify core security operating workflows",
+      "Track posture, awareness, evidence, and reporting",
+      "Give leadership a single view of security maturity",
+    ],
+    benefits: [
+      "Reduced tool sprawl",
+      "Faster security maturity ramp",
+      "One operational source of truth",
+    ],
     features: [
       "Endpoint posture module",
       "Phishing readiness module",
@@ -176,10 +255,61 @@ export const products: GemProduct[] = [
   },
 ];
 
+export const services = [
+  {
+    title: "Security Readiness Review",
+    price: "From $1,500",
+    description:
+      "A focused review of current security posture, visible risk gaps, control ownership, and prioritized remediation actions.",
+    deliverables: ["Readiness scorecard", "Risk register", "30-day action plan"],
+  },
+  {
+    title: "Compliance Evidence Setup",
+    price: "From $2,500",
+    description:
+      "Practical setup support for policies, evidence registers, control mapping, and internal audit preparation workflows.",
+    deliverables: ["Evidence map", "Policy tracker", "Control ownership model"],
+  },
+  {
+    title: "Executive Cyber Risk Reporting",
+    price: "From $750/month",
+    description:
+      "Recurring security posture reporting for business leaders who need plain-English visibility into risk and progress.",
+    deliverables: ["Monthly risk digest", "Posture trend report", "Priority recommendations"],
+  },
+];
+
+export const complianceFrameworks = [
+  "SOC 2 readiness support",
+  "ISO 27001 control alignment support",
+  "NIST Cybersecurity Framework alignment",
+  "CIS Controls implementation tracking",
+  "PCI DSS evidence readiness support",
+  "HIPAA security administrative safeguard mapping support",
+  "FTC Safeguards Rule readiness support",
+  "GLBA security program documentation support",
+];
+
+export const trustSignals = [
+  "Transparent annual software pricing",
+  "Visible refund and digital delivery policies",
+  "Business contact phone and email published",
+  "Merchant feed and product pages aligned",
+  "Trustpilot-ready review footer placement",
+  "Google Merchant Center readiness workflow",
+];
+
+export const approvalLanguage =
+  "GEM supports compliance readiness and control alignment. Certifications, regulator approvals, Trustpilot ratings, Google ratings, and third-party seals should only be displayed after the company has verified and obtained them.";
+
 export const primaryRoutes = [
   "/",
   "/store",
+  "/products",
+  "/services",
   "/pricing",
+  "/compliance",
+  "/trust",
   "/checkout",
   "/contact",
   "/support",
