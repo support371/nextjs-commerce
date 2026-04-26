@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
-const nav = [
-  ["Products", "/store"],
-  ["Services", "/services"],
-  ["Pricing", "/pricing"],
-  ["Compliance", "/compliance"],
-  ["Trust", "/trust"],
-  ["About", "/about"],
-  ["Contact", "/contact"],
+const nav: { label: string; href: string }[] = [
+  { label: "Products", href: "/store" },
+  { label: "Services", href: "/services" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Compliance", href: "/compliance" },
+  { label: "Trust", href: "/trust" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function Header() {
@@ -33,7 +33,7 @@ function Header() {
           <span className="hidden text-white sm:block">{company.name}</span>
         </Link>
         <nav className="hidden items-center gap-5 text-sm font-medium text-slate-300 lg:flex">
-          {nav.map(([label, href]) => <Link key={href} href={href} className="hover:text-white">{label}</Link>)}
+          {nav.map((item) => <Link key={item.href} href={item.href} className="hover:text-white">{item.label}</Link>)}
         </nav>
         <div className="flex items-center gap-3">
           <Link href="/checkout" className="hidden rounded-full border border-white/15 px-4 py-2 text-sm font-bold text-white hover:bg-white/10 sm:inline-flex">Checkout</Link>
