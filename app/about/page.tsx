@@ -1,0 +1,1 @@
+export default function AboutPage() { return <section className="mx-auto max-w-7xl px-4 py-16"><h1 className="text-5xl font-black text-white">About GEM</h1><p className="mt-5 text-slate-300">GEM provides software products, support resources, and operational guidance for growing businesses.</p></section>; }
