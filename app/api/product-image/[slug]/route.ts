@@ -1,9 +1,22 @@
 import { getProductBySlug } from "lib/gem-catalog";
 
-export function GET(_req: Request, context: { params: { slug: string } }) {
-  const product = getProductBySlug(context.params.slug);
-  const title = product?.shortTitle || "GEM Product";
-  const category = product?.category || "Cybersecurity Software";
+function escapeXml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+export async function GET(
+  _req: Request,
+  context: { params: Promise<{ slug: string }> },
+) {
+  const { slug } = await context.params;
+  const product = getProductBySlug(slug);
+  const title = escapeXml(product?.shortTitle || "GEM Product");
+  const category = escapeXml(product?.category || "Cybersecurity Software");
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
     <defs>
@@ -22,5 +35,11 @@ export function GET(_req: Request, context: { params: { slug: string } }) {
     <rect x="140" y="880" width="920" height="110" rx="26" fill="#052e2b" stroke="#34d399" stroke-opacity="0.4" />
     <text x="180" y="950" fill="#d1fae5" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="700">Annual prepaid software subscription</text>
   </svg>`;
-  return new Response(svg, { headers: { "content-type": "image/svg+xml; charset=utf-8" } });
+
+  return new Response(svg, {
+    headers: {
+      "content-type": "image/svg+xml; charset=utf-8",
+      "cache-control": "public, max-age=3600",
+    },
+  });
 }
