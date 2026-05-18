@@ -1,5 +1,115 @@
 import Link from "next/link";
 
-const tiktokAssets = [{"id": 1, "title": "Cybersecurity Is A Business Priority", "description": "Protect your systems. Protect your customers. Protect your reputation. Protect your revenue.", "tagline": "Secure today. Stronger tomorrow.", "src": "data:image/webp;base64,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", "sku": "ATM-TIKTOK-001"}];
+const tiktokProducts = [
+  {
+    title: "Cybersecurity Is A Business Priority",
+    sku: "ATM-TIKTOK-001",
+    accent: "from-yellow-400/30 via-amber-300/10 to-slate-950",
+    description: "Protect your systems, customers, reputation, and revenue with a concise security awareness product card.",
+    script: "Secure today. Stronger tomorrow.",
+    bullets: ["Protect your systems", "Protect your customers", "Protect your reputation", "Protect your revenue"],
+  },
+  {
+    title: "Cybersecurity Checklist",
+    sku: "ATM-TIKTOK-002",
+    accent: "from-cyan-400/30 via-sky-300/10 to-slate-950",
+    description: "A short checklist style product video for baseline cyber hygiene and staff education.",
+    script: "Start with the basics. Stay secure. Stay ahead.",
+    bullets: ["Strong passwords", "Multi-factor authentication", "Software updates", "Secure backups"],
+  },
+  {
+    title: "Pause Before You Click",
+    sku: "ATM-TIKTOK-003",
+    accent: "from-red-400/30 via-rose-300/10 to-slate-950",
+    description: "A phishing prevention product card built for high-retention TikTok short-form awareness.",
+    script: "Phishing looks real. Protect your business.",
+    bullets: ["Check the sender", "Watch for urgency", "Verify the link", "Avoid unknown password pages"],
+  },
+  {
+    title: "Signs You Need A Cybersecurity Review",
+    sku: "ATM-TIKTOK-004",
+    accent: "from-sky-400/30 via-cyan-300/10 to-slate-950",
+    description: "A gap-assessment product video concept for moving prospects into a cybersecurity review flow.",
+    script: "Find the gaps before attackers do.",
+    bullets: ["No MFA", "Old software", "Reused passwords", "No backup plan"],
+  },
+  {
+    title: "One Leaked Password",
+    sku: "ATM-TIKTOK-005",
+    accent: "from-blue-400/30 via-cyan-300/10 to-slate-950",
+    description: "A password security product video card for simple, visual, conversion-friendly education.",
+    script: "Fix the easy risk first.",
+    bullets: ["Use unique passwords", "Avoid reuse", "Enable MFA", "Use a password manager"],
+  },
+];
 
-export default function Placeholder(){return <div/>}
+export const metadata = {
+  title: "TikTok Product Videos | Alliance Trust Market",
+  description:
+    "TikTok-ready product media gallery with vertical image cards, play controls, product descriptions, and video slots.",
+};
+
+export default function TikTokProductsPage() {
+  return (
+    <main className="bg-slate-950 text-white">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <span className="gem-pill">TikTok product media</span>
+        <h1 className="mt-6 max-w-5xl text-5xl font-black tracking-[-0.06em] text-white sm:text-7xl">
+          Vertical image cards with a playable video layer.
+        </h1>
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+          This page is now structured exactly for the product-media use case: each TikTok product has a vertical poster, a play button, a product description, listing SKU, bullet points, and a short video caption area. The current cards are ready to connect to uploaded MP4 files or hosted TikTok-ready videos.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/alliance-market" className="gem-btn-secondary">Alliance home</Link>
+          <Link href="/alliance-market/products" className="gem-btn-primary">Product catalog</Link>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {tiktokProducts.map((product) => (
+            <article key={product.sku} className="gem-panel overflow-hidden rounded-[2rem]">
+              <div className={`relative min-h-[620px] bg-gradient-to-br ${product.accent} p-6`}>
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(14,165,233,.22)_1px,transparent_1px),linear-gradient(90deg,rgba(14,165,233,.22)_1px,transparent_1px)] bg-[size:44px_44px]" />
+                <div className="relative flex items-center justify-between gap-3">
+                  <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-slate-200">Cybersecurity</span>
+                  <span className="rounded-full bg-black/40 px-3 py-1 text-xs font-black text-white">{product.sku}</span>
+                </div>
+                <h2 className="relative mt-12 text-4xl font-black uppercase leading-tight tracking-[-0.05em] text-slate-200 sm:text-5xl">
+                  {product.title}
+                </h2>
+                <div className="relative mx-auto mt-20 grid h-28 w-28 place-items-center rounded-full border-4 border-current text-emerald-200">
+                  <button aria-label={`Play video for ${product.title}`} className="grid h-20 w-20 place-items-center rounded-full bg-current text-3xl text-slate-950 shadow-2xl">
+                    ▶
+                  </button>
+                </div>
+                <div className="relative mt-16 rounded-[2rem] border border-white/15 bg-black/55 p-6 backdrop-blur-md">
+                  <div className="grid gap-4">
+                    {product.bullets.map((bullet) => (
+                      <div key={bullet} className="flex items-center gap-4 text-lg font-black tracking-wide text-slate-200">
+                        <span className="grid h-9 w-9 place-items-center rounded-full bg-emerald-300/20 text-emerald-100">✓</span>
+                        <span>{bullet}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative mt-8 rounded-2xl bg-emerald-300/20 p-4 text-center text-sm font-black uppercase tracking-[0.18em] text-slate-200">
+                  {product.script}
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-black text-white">{product.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">{product.description}</p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href="/alliance-market/products" className="gem-btn-primary py-2">Use in listing</Link>
+                  <Link href="/alliance-market/policies" className="gem-btn-secondary py-2">Policy check</Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
