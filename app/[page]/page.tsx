@@ -4,10 +4,38 @@ import Prose from "components/prose";
 import { getPage } from "lib/shopify";
 import { notFound } from "next/navigation";
 
+// Routes that should not be handled by this catch-all page
+const RESERVED_ROUTES = new Set([
+  "alliance-market",
+  "api",
+  "product",
+  "products",
+  "store",
+  "search",
+  "checkout",
+  "about",
+  "admin",
+  "compliance",
+  "contact",
+  "merchant-feed.txt",
+  "policies",
+  "portal",
+  "pricing",
+  "services",
+  "support",
+  "thank-you",
+  "trust",
+]);
+
 export async function generateMetadata(props: {
   params: Promise<{ page: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
+  
+  if (RESERVED_ROUTES.has(params.page)) {
+    return notFound();
+  }
+  
   const page = await getPage(params.page);
 
   if (!page) return notFound();
@@ -27,6 +55,11 @@ export default async function Page(props: {
   params: Promise<{ page: string }>;
 }) {
   const params = await props.params;
+  
+  if (RESERVED_ROUTES.has(params.page)) {
+    return notFound();
+  }
+  
   const page = await getPage(params.page);
 
   if (!page) return notFound();
