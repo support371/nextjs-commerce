@@ -31,7 +31,7 @@ const products = collections.flatMap((collection, group) =>
   })
 );
 
-export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const product = products.find((item) => item.slug === params.slug);
