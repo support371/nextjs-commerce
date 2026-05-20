@@ -1,35 +1,65 @@
 import { products, services } from "./gem-catalog";
 
-export type LeadStatus = "New" | "Qualified" | "In Review" | "Converted" | "Closed";
-export type TicketStatus = "New" | "In Review" | "Waiting on Customer" | "Resolved";
-export type InquiryStatus = "New" | "Invoice Pending" | "Payment Pending" | "Provisioning" | "Completed";
+export type LeadStatus =
+  | "New"
+  | "Qualified"
+  | "In Review"
+  | "Converted"
+  | "Closed";
+export type TicketStatus =
+  | "New"
+  | "In Review"
+  | "Waiting on Customer"
+  | "Resolved";
+export type InquiryStatus =
+  | "New"
+  | "Invoice Pending"
+  | "Payment Pending"
+  | "Provisioning"
+  | "Completed";
 
 export const dashboardMetrics = [
-  { label: "Products", value: products.length, detail: "Active software subscriptions" },
-  { label: "Services", value: services.length, detail: "Professional service offerings" },
-  { label: "Open Leads", value: 12, detail: "Contact and consultation requests" },
+  {
+    label: "Products",
+    value: products.length,
+    detail: "Active software subscriptions",
+  },
+  {
+    label: "Services",
+    value: services.length,
+    detail: "Professional service offerings",
+  },
+  {
+    label: "Open Leads",
+    value: 12,
+    detail: "Contact and consultation requests",
+  },
   { label: "Open Tickets", value: 4, detail: "Customer support queue" },
 ];
 
 export const adminModules = [
   {
     title: "Product Management",
-    description: "Manage product copy, SKU, pricing, benefits, Merchant Center fields, and product landing content.",
+    description:
+      "Manage product copy, SKU, pricing, benefits, Merchant Center fields, and product landing content.",
     href: "/admin/products",
   },
   {
     title: "Lead Pipeline",
-    description: "Review contact form submissions, qualification status, company details, and product interest.",
+    description:
+      "Review contact form submissions, qualification status, company details, and product interest.",
     href: "/admin/leads",
   },
   {
     title: "Order Inquiries",
-    description: "Track checkout requests, invoice status, payment handoff, and customer provisioning.",
+    description:
+      "Track checkout requests, invoice status, payment handoff, and customer provisioning.",
     href: "/admin/orders",
   },
   {
     title: "Support Desk",
-    description: "Track access issues, billing questions, onboarding requests, and ticket resolution.",
+    description:
+      "Track access issues, billing questions, onboarding requests, and ticket resolution.",
     href: "/admin/support",
   },
 ];
@@ -112,15 +142,18 @@ export const sampleSupportTickets = [
 export const portalItems = [
   {
     title: "Order inquiry history",
-    description: "View product interest, status, invoice handoff, and provisioning progress.",
+    description:
+      "View product interest, status, invoice handoff, and provisioning progress.",
   },
   {
     title: "Support tickets",
-    description: "Submit access, billing, onboarding, and product support requests.",
+    description:
+      "Submit access, billing, onboarding, and product support requests.",
   },
   {
     title: "Account profile",
-    description: "Maintain company contact information and product ownership details.",
+    description:
+      "Maintain company contact information and product ownership details.",
   },
 ];
 

@@ -25,16 +25,27 @@ export default function ServicesPage() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <span className="gem-pill">Services</span>
-      <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-[-0.06em] text-white">Professional support for product rollout and security maturity.</h1>
-      <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">GEM services help customers implement the software stack, organize evidence, and produce executive-ready reporting.</p>
+      <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-[-0.06em] text-white">
+        Professional support for product rollout and security maturity.
+      </h1>
+      <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+        GEM services help customers implement the software stack, organize
+        evidence, and produce executive-ready reporting.
+      </p>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {services.map((service) => (
           <article key={service.title} className="gem-panel rounded-[2rem] p-6">
             <h2 className="text-2xl font-black text-white">{service.title}</h2>
-            <p className="mt-3 text-xl font-black text-emerald-200">{service.price}</p>
-            <p className="mt-4 text-sm leading-6 text-slate-300">{service.text}</p>
+            <p className="mt-3 text-xl font-black text-emerald-200">
+              {service.price}
+            </p>
+            <p className="mt-4 text-sm leading-6 text-slate-300">
+              {service.text}
+            </p>
             <ul className="mt-6 grid gap-2 text-sm text-slate-400">
-              {service.items.map((item) => <li key={item}>Included: {item}</li>)}
+              {service.items.map((item) => (
+                <li key={item}>Included: {item}</li>
+              ))}
             </ul>
           </article>
         ))}

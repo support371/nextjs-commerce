@@ -29,7 +29,7 @@ const products = collections.flatMap((collection, group) =>
       description:
         "A practical physical retail item for organized property, home, and office workflows. Built for move-in support, gifting, staging, desk organization, and everyday planning.",
     };
-  })
+  }),
 );
 
 export const dynamicParams = true;
@@ -119,7 +119,10 @@ export default async function AllianceProductDetailPage({
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/alliance-market/policies" className="gem-btn-secondary">
+              <Link
+                href="/alliance-market/policies"
+                className="gem-btn-secondary"
+              >
                 Policies
               </Link>
               <Link href="/contact" className="gem-btn-primary">

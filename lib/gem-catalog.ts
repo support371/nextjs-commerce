@@ -261,7 +261,11 @@ export const services = [
     price: "From $1,500",
     description:
       "A focused review of current security posture, visible risk gaps, control ownership, and prioritized remediation actions.",
-    deliverables: ["Readiness scorecard", "Risk register", "30-day action plan"],
+    deliverables: [
+      "Readiness scorecard",
+      "Risk register",
+      "30-day action plan",
+    ],
   },
   {
     title: "Compliance Evidence Setup",
@@ -275,7 +279,11 @@ export const services = [
     price: "From $750/month",
     description:
       "Recurring security posture reporting for business leaders who need plain-English visibility into risk and progress.",
-    deliverables: ["Monthly risk digest", "Posture trend report", "Priority recommendations"],
+    deliverables: [
+      "Monthly risk digest",
+      "Posture trend report",
+      "Priority recommendations",
+    ],
   },
 ];
 
@@ -327,7 +335,9 @@ export function normalizeSlug(slug: string) {
 
 export function getProductBySlug(slug: string) {
   const normalized = normalizeSlug(slug);
-  return products.find((product) => product.slug === normalized || product.id === normalized);
+  return products.find(
+    (product) => product.slug === normalized || product.id === normalized,
+  );
 }
 
 export function productUrl(product: GemProduct) {
