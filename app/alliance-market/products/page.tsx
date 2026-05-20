@@ -24,7 +24,7 @@ const products = collections.flatMap((collection, group) =>
       price: `$${(14.99 + group * 3 + index * 1.45).toFixed(2)}`,
       slug: `alliance-product-${id}`,
     };
-  })
+  }),
 );
 
 export const metadata = {
@@ -36,17 +36,32 @@ export default function AllianceProductsPage() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
       <span className="gem-pill">Alliance Trust Market</span>
-      <h1 className="mt-6 text-5xl font-black tracking-[-0.06em] text-white sm:text-7xl">Product catalog.</h1>
+      <h1 className="mt-6 text-5xl font-black tracking-[-0.06em] text-white sm:text-7xl">
+        Product catalog.
+      </h1>
       <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-        One hundred draft physical retail products arranged as a separate app module inside this repository. Final inventory, UPC or GTIN status, photography, and shipping data should be verified before marketplace publication.
+        One hundred draft physical retail products arranged as a separate app
+        module inside this repository. Final inventory, UPC or GTIN status,
+        photography, and shipping data should be verified before marketplace
+        publication.
       </p>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {products.map((product) => (
-          <Link key={product.id} href={`/alliance-market/products/${product.slug}`} className="gem-panel rounded-3xl p-6 transition hover:bg-white/[0.09]">
-            <span className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-xs font-bold text-emerald-100">{product.collection}</span>
-            <h2 className="mt-6 text-xl font-black text-white">{product.title}</h2>
+          <Link
+            key={product.id}
+            href={`/alliance-market/products/${product.slug}`}
+            className="gem-panel rounded-3xl p-6 transition hover:bg-white/[0.09]"
+          >
+            <span className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-xs font-bold text-emerald-100">
+              {product.collection}
+            </span>
+            <h2 className="mt-6 text-xl font-black text-white">
+              {product.title}
+            </h2>
             <p className="mt-3 text-sm text-slate-400">SKU {product.sku}</p>
-            <strong className="mt-5 block text-2xl text-white">{product.price}</strong>
+            <strong className="mt-5 block text-2xl text-white">
+              {product.price}
+            </strong>
           </Link>
         ))}
       </div>

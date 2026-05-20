@@ -28,9 +28,13 @@ export default function AlliancePoliciesPage() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
       <span className="gem-pill">Alliance policy center</span>
-      <h1 className="mt-6 text-5xl font-black tracking-[-0.06em] text-white sm:text-7xl">Operational policies.</h1>
+      <h1 className="mt-6 text-5xl font-black tracking-[-0.06em] text-white sm:text-7xl">
+        Operational policies.
+      </h1>
       <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-        These pages provide the compliance surface for the new Alliance Trust Market app while preserving the existing GEM application and its Google Merchant-oriented policy structure.
+        These pages provide the compliance surface for the new Alliance Trust
+        Market app while preserving the existing GEM application and its Google
+        Merchant-oriented policy structure.
       </p>
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         {policies.map((policy) => (
@@ -41,11 +45,16 @@ export default function AlliancePoliciesPage() {
         ))}
       </div>
       <div className="mt-10 rounded-3xl border border-amber-300/20 bg-amber-300/10 p-6 text-amber-100">
-        Final human review is required before publishing real products, submitting listings, or claiming marketplace approval.
+        Final human review is required before publishing real products,
+        submitting listings, or claiming marketplace approval.
       </div>
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/alliance-market" className="gem-btn-secondary">Alliance home</Link>
-        <Link href="/alliance-market/products" className="gem-btn-primary">Product catalog</Link>
+        <Link href="/alliance-market" className="gem-btn-secondary">
+          Alliance home
+        </Link>
+        <Link href="/alliance-market/products" className="gem-btn-primary">
+          Product catalog
+        </Link>
       </div>
     </section>
   );

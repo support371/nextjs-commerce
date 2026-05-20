@@ -50,7 +50,8 @@ export default function AllianceMarketMenu() {
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-6 text-slate-400">
-            One Next.js Commerce framework with each channel and workstream isolated as its own highlighted subpage.
+            One Next.js Commerce framework with each channel and workstream
+            isolated as its own highlighted subpage.
           </p>
         </div>
 
@@ -68,10 +69,20 @@ export default function AllianceMarketMenu() {
                 }
               >
                 <div className="flex items-center justify-between gap-3">
-                  <strong className="text-sm font-black text-white">{item.label}</strong>
-                  <span className={active ? "h-3 w-3 rounded-full bg-emerald-300" : "h-3 w-3 rounded-full bg-slate-600"} />
+                  <strong className="text-sm font-black text-white">
+                    {item.label}
+                  </strong>
+                  <span
+                    className={
+                      active
+                        ? "h-3 w-3 rounded-full bg-emerald-300"
+                        : "h-3 w-3 rounded-full bg-slate-600"
+                    }
+                  />
                 </div>
-                <p className="mt-2 text-xs leading-5 text-slate-400">{item.description}</p>
+                <p className="mt-2 text-xs leading-5 text-slate-400">
+                  {item.description}
+                </p>
               </Link>
             );
           })}
