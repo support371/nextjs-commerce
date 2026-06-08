@@ -79,7 +79,7 @@ export async function shopifyFetch<T>({
 }): Promise<{ status: number; body: T } | never> {
   try {
     if (!endpoint) {
-      throw new Error("SHOPIFY_STORE_DOMAIN environment variable is not set");
+      return { status: 503, body: {} as T };
     }
 
     const result = await fetch(endpoint, {
