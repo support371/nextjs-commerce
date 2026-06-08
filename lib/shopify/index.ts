@@ -266,7 +266,6 @@ export async function updateCart(
 }
 
 export async function getCart(): Promise<Cart | undefined> {
-  "use cache: private";
   const cartId = (await cookies()).get("cartId")?.value;
 
   if (!cartId) {
